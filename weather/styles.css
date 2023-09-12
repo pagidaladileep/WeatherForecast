@@ -2,22 +2,23 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
   --white: #ffffff;
-  --off-white: #e5e5e5;
-  --transp-white-1: rgba(255, 255, 255, 0.25);
-  --transp-white-2: rgba(255, 255, 255, 0.1);
+  --light-gray: #e5e5e5;
+  --transparent-white-1: rgba(255, 255, 255, 0.25);
+  --transparent-white-2: rgba(255, 255, 255, 0.1);
   --blue-1: #62b8f5;
   --blue-2: #4475ef;
-  --shadow: rgba(3, 46, 87, 0.2);
+  --box-shadow: rgba(3, 46, 87, 0.2);
+  --background-color: #f0f0f0; /* Added background color */
 }
 
 body {
   height: 100vh;
-  background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+  background: var(--background-color); /* Set the background color here */
 }
 
 .weather-container {
@@ -28,6 +29,9 @@ body {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  background-color: pink; /* Added background color for the weather container */
+  padding: 1em; /* Added padding for better readability */
+  border-radius: 0.5em; /* Added border radius for a rounded appearance */
 }
 
 .search-container {
@@ -47,13 +51,13 @@ body {
 .search-container input {
   padding: 0.7em;
   background-color: transparent;
-  border-bottom: 2px solid var(--transp-white-1);
+  border-bottom: 2px solid var(--transparent-white-1);
   color: var(--white);
   font-weight: 300;
 }
 
 .search-container input::placeholder {
-  color: var(--off-white);
+  color: var(--light-gray);
 }
 
 .search-container input:focus {
@@ -66,6 +70,13 @@ body {
   border-radius: 0.3em;
 }
 
+.weather-details-container {
+  background-color: var(--blue-1); /* Background color for weather details container */
+  margin-top: 1em; /* Added margin to separate it from the search container */
+  padding: 1em; /* Added padding for better readability */
+  border-radius: 0.5em; /* Added border radius for a rounded appearance */
+}
+
 #result h2 {
   color: var(--white);
   text-transform: uppercase;
@@ -75,8 +86,8 @@ body {
 }
 
 .weather,
-.desc {
-  color: var(--off-white);
+.weather-description {
+  color: var(--light-gray);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.9em;
@@ -91,7 +102,7 @@ body {
 #result img {
   margin: 0.6em 0 0 0;
   width: 6.2em;
-  filter: drop-shadow(0 1.8em 3.7em var(--shadow));
+  filter: drop-shadow(0 1.8em 3.7em var(--box-shadow));
 }
 
 #result h1 {
@@ -102,30 +113,30 @@ body {
   color: var(--white);
 }
 
-.temp-container {
+.temperature-container {
   display: flex;
   justify-content: center;
 }
 
-.temp-container div {
+.temperature-container div {
   padding: 0.3em 1em;
 }
 
-.temp-container div:first-child {
-  border-right: 1px solid var(--transp-white-1);
+.temperature-container div:first-child {
+  border-right: 1px solid var(--transparent-white-1);
 }
 
-.temp-container .title {
+.temperature-container .title {
   font-weight: 600;
   color: var(--white);
 }
 
-.temp-container .temp {
+.temperature-container .temp {
   font-weight: 300;
-  color: var(--off-white);
+  color: var(--light-gray);
 }
 
-.msg {
+.message {
   margin-top: 1.8em;
   color: var(--white);
   font-weight: 500;
